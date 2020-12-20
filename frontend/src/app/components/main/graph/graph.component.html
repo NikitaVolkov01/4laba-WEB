@@ -1,0 +1,21 @@
+<div #graph_plate id="graph-plate" class="justify-content-center">
+  <svg #graph_svg  id="graph-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#CACFD2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+       (mouseenter)="onGraphEnter($event)"
+       (mouseleave)="onGraphLeave($event)"
+       (mousemove)="onGraphMove($event)"
+       (click)="onGraphClick()">
+    <path d="M200,200 l0,80 A80,80,0,0,0,280,200 l80,0,0,-160,-160,0,0,80,-160,80,200,0 z" stroke="none" fill="#555857" opacity="0.5" />
+    <path d="M0,200 h40 v3,-6,3 h80 v3,-6,3 h80 v-80 h3,-6,3 v-80 h3,-6,3 v-40 m0,0 l3,6,-3,-6,-3,6,3,-6 v200 h80 v3,-6,3 h80 v3,-6,3 h40 m0,0 l-6,3,6,-3,-6,-3,6,3 h-200 v80 h3,-6,3 v80 h3,-6,3 v40 v-200 h-200 z" />
+    <!-- coordinate lines -->
+    <line id="line1" x1="5" x2="395" stroke="#5DADE2" stroke-width="0" stroke-dasharray="8" />
+    <line id="line2" y1="5" y2="395" stroke="#5DADE2" stroke-width="0" stroke-dasharray="8" />
+    <!-- coordinates -->
+    <text x="30" y="192">- R</text>
+    <text x="356" y="192">R</text>
+    <text x="210" y="44">R</text>
+    <text x="208" y="364">- R</text>
+  </svg>
+
+
+  <div class="invalid-feedback position-absolute mb-10">Please select R value</div>
+</div>

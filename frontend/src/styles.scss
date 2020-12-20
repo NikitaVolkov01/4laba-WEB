@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome';
+
+@import "~angular-notifier/styles";
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --default-text: #fff;
+  --default-background: #3B00E2;
+
+  --color-primary: #D3F971;
+  --color-secondary: #0a9152;
+  --color-tertiary: #FFFFFF;
+  --color-quaternary: #EE209B;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: 'Comfortaa', cursive;
+  background: rgba(176, 176, 176, 0.59);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+.secondary {
+  color: var(--color-secondary);
+}
+
+.button {
+  align-self: center;
+  color: var(--default-background);
+  margin: 0.75em 2vh 0;
+  padding: 3.5vh 10vh;
+  border-radius: 10vh;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background-color: var(--color-primary);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.button:hover {
+  background-color: #EE209B;
+}
+
+$fill-color: #0D6EFD;
+$stroke-color: #000;
+$cross-color: #D02424;
+$cross-color-green: #2cd018;
+$dotted-line-color: #D02424;
+
+.dotted-line-x,
+.dotted-line-y,
+.dotted-raw-x,
+.dotted-raw-y {
+  stroke: $stroke-color;
+  stroke-dasharray: 5;
+}
+
+.dotted-raw-x,
+.dotted-raw-y {
+  stroke-width: 2px;
+  stroke: $dotted-line-color;
+}
+
+.crossing {
+  fill: $fill-color;
+}
+
+.crossing-red {
+  fill: $cross-color;
+}
+
+.crossing-green {
+  fill: $cross-color-green;
+}

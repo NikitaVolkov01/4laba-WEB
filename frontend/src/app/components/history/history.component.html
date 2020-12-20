@@ -1,0 +1,53 @@
+
+
+<div class="table-card bg-dark">
+  <div class="table-box">
+  <div class="d-flex mb-2">
+    <div>
+<!--      <button [routerLink]="['/main']" class="btn btn-secondary"><span class="fa fa-angle-left"></span> Back</button>-->
+    </div>
+
+    <div class="ml-auto">
+      <button class="btn btn-danger" (click)="onClear()"><span class="fa fa-trash"></span> Clear all</button>
+    </div>
+  </div>
+
+    <div class="table-responsive-sm">
+      <table class="table table-dark table-hover">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">X</th>
+          <th scope="col">Y</th>
+          <th scope="col">R</th>
+          <th scope="col">Hit</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let point of points | slice: (page-1) * itemsPerPage : page * itemsPerPage" [id]="point.id">
+          <th scope="row">{{ point.id }}</th>
+          <td><ngb-highlight [result]="point.x | number"></ngb-highlight></td>
+          <td><ngb-highlight [result]="point.y | number"></ngb-highlight></td>
+          <td><ngb-highlight [result]="point.r | number"></ngb-highlight></td>
+          <td><ngb-highlight [result]="point.hit"></ngb-highlight></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div class="d-flex justify-content-center mb-3 table-dark">
+        <h3 id="status-text" class="mr-2">Loading...</h3>
+        <div id="m-loading" class="spinner-border " role="status">
+          <span class="sr-only" id="loading"></span>
+        </div>
+      </div>
+    </div>
+
+  <div class="d-flex justify-content-center">
+    <ngb-pagination
+      [collectionSize]="total" [(page)]="page" [maxSize]="5" [pageSize]="itemsPerPage">
+    </ngb-pagination>
+
+  </div>
+</div>
+</div>

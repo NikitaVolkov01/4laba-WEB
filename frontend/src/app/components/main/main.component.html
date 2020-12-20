@@ -1,0 +1,99 @@
+<app-header></app-header>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="main-card bg-dark">
+        <div class="main-box">
+          <app-graph (onGraphEvent)="onGraphEvent($event)"></app-graph>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <div class="main-card bg-dark">
+        <div class="main-box">
+          <div>
+            <h4 class="text-white mb-2 mt-5 mt-lg-0 text-center">Area Form</h4>
+            <div class="justify-content-around">
+              <form class="d-block d-flex flex-column" [formGroup]="mainForm" (ngSubmit)="submit()">
+
+                <label class="text-white font-weight-bold mb-1">X value:</label>
+                <small class="form-text text-muted mb-1">Must be from -2 to 2</small>
+                <div id="x-input" class="form-group mb-1 d-block">
+                  <select class="form-control" formControlName="x" (change)="valueXChange($event)"
+                          [ngClass]="{ 'is-invalid': (xInputOnChange || submitted) && f.x.errors }">
+                    <option disabled selected value>
+                    <option>-2</option>
+                    <option>-1.5</option>
+                    <option>-1</option>
+                    <option>-0.5</option>
+                    <option>0</option>
+                    <option>0.5</option>
+                    <option>1</option>
+                    <option>1.5</option>
+                    <option>2</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group" id="y-input">
+                  <label class="text-white font-weight-bold mb-0" for="y-text">Y value:</label>
+                  <small class="form-text text-muted mb-1">Must be from -3 to 3</small>
+                  <input (focusout)="yInputOnFocus=true" (input)="valueYChange($event)" formControlName="y" [ngClass]="{ 'is-invalid': (yInputOnFocus || submitted) && f.y.errors }" maxlength="16" autocomplete="off" id="y-text" class="form-control y-text" placeholder="Enter value" type="text" />
+                </div>
+
+
+                <label class="text-white font-weight-bold mb-0">R value:</label>
+                <small class="form-text text-muted mb-1">Must be from 0.5 to 2</small>
+                <div id="r-input" class="form-group mb-1 d-block">
+                  <select class="form-control" formControlName="r" (change)="valueRChange($event)"
+                          [ngClass]="{ 'is-invalid': (rInputOnChange || submitted) && f.r.errors }">
+                    <option disabled selected value>
+                    <option>-2</option>
+                    <option>-1.5</option>
+                    <option>-1</option>
+                    <option>-0.5</option>
+                    <option>0</option>
+                    <option>0.5</option>
+                    <option>1</option>
+                    <option>1.5</option>
+                    <option>2</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group text-center">
+                  <input value="Submit" class="btn m-1 btn-primary submit-button"
+                         type="submit" >
+
+                  <input value="Clear form" class="btn m-1 btn-secondary clear-from-button"
+                         type="button" (click)="onClear()" />
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <app-history (onDeleteEvent)="onDeleteEvent($event)"></app-history>
+</div>
+
+<ng-template #customNotification let-notificationData="notification">
+  <div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg mt-2">{{ notificationData.message}}</div>
+        <div class=""><button (click)="onNotifyClick(notificationData.id)" class="btn btn-secondary"><i class="fa fa-table"></i></button></div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+<notifier-container></notifier-container>

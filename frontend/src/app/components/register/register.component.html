@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p class="alert">{{errorMessage}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Close</button>
+  </div>
+</ng-template>
+
+
+<div class="container container-flow">
+
+  <div class="hover-area area-1"></div>
+  <div class="hover-area area-2"></div>
+  <div class="hover-area area-3"></div>
+  <div class="hover-area area-4"></div>
+  <div class="hover-area area-5"></div>
+  <div class="hover-area area-6"></div>
+  <div class="hover-area area-7"></div>
+  <div class="hover-area area-8"></div>
+  <div class="hover-area area-9"></div>
+
+  <form class="box bg-dark" [formGroup]="registerForm" (ngSubmit)="register()" >
+    <h1>Register</h1>
+    <p class="text-muted"> Please enter your login and password!</p>
+
+
+    <div *ngIf="submitted && f.username.errors" class="help-block text-danger">
+      <div *ngIf="f.username.errors.required">Username is required</div>
+    </div>
+    <input type="text" placeholder="Username" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"  />
+
+    <div *ngIf="submitted && f.password.errors" class="help-block text-danger">
+      <div *ngIf="submitted && f.password.errors.required">Password is required</div>
+      <div *ngIf="submitted && f.password.errors.minlength">Password must be at least 6 characters</div>
+    </div>
+    <input type="password" placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+
+
+    <div *ngIf="submitted && f.confirmPassword.errors" class="help-block text-danger">
+      <div *ngIf="submitted && f.confirmPassword.errors.required">Confirm Password is required</div>
+      <div *ngIf="submitted && f.confirmPassword.errors.mustMatch">Passwords must match</div>
+    </div>
+    <input type="password"  placeholder="Confirm Password" formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"  />
+
+
+    <input class="button" type="submit" value="Register" />
+  </form>
+
+</div>

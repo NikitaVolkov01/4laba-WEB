@@ -1,0 +1,182 @@
+.container-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "one two three" "four five six" "seven eight nine";
+  height: calc(100vh - 10px);
+  perspective: 1000px;
+}
+
+.hover-area {
+  align-self: stretch;
+  justify-self: stretch;
+}
+
+.area-1 {
+  grid-area: one;
+}
+
+.area-2 {
+  grid-area: two;
+}
+
+.area-3 {
+  grid-area: three;
+}
+
+.area-4 {
+  grid-area: four;
+}
+
+.area-5 {
+  grid-area: five;
+}
+
+.area-6 {
+  grid-area: six;
+}
+
+.area-7 {
+  grid-area: seven;
+}
+
+.area-8 {
+  grid-area: eight;
+}
+
+.area-9 {
+  grid-area: nine;
+}
+
+.hover-area:nth-of-type(1):hover ~ .box {
+  transform: rotateY(-10deg) rotateX(10deg);
+}
+.hover-area:nth-of-type(1):hover ~ .box .secondary, .hover-area:nth-of-type(1):hover ~ .box .quaternary {
+  transform: translateX(-0.5rem) rotateY(2deg) rotateX(-2deg);
+}
+
+.hover-area:nth-of-type(2):hover ~ .box {
+  transform: rotateY(0deg) rotateX(10deg);
+}
+.hover-area:nth-of-type(2):hover ~ .box .secondary, .hover-area:nth-of-type(2):hover ~ .box .quaternary {
+  transform: translateX(0) rotateX(0) rotateX(-2deg);
+}
+
+.hover-area:nth-of-type(3):hover ~ .box {
+  transform: rotateY(10deg) rotateX(10deg);
+}
+.hover-area:nth-of-type(3):hover ~ .box .secondary, .hover-area:nth-of-type(3):hover ~ .box .quaternary {
+  transform: translateX(0.5rem) rotateY(-2deg) rotateX(-2deg);
+}
+
+.hover-area:nth-of-type(4):hover ~ .box {
+  transform: rotateY(-10deg);
+}
+.hover-area:nth-of-type(4):hover ~ .box .secondary, .hover-area:nth-of-type(4):hover ~ .box .quaternary {
+  transform: translateX(-0.5rem) rotateX(2deg);
+}
+
+.hover-area:nth-of-type(5):hover ~ .box {
+  transform: rotateY(0deg);
+}
+.hover-area:nth-of-type(5):hover ~ .box .secondary, .hover-area:nth-of-type(5):hover ~ .box .quaternary {
+  transform: translateX(0) rotateX(0);
+}
+
+.hover-area:nth-of-type(6):hover ~ .box {
+  transform: rotateY(10deg);
+}
+.hover-area:nth-of-type(6):hover ~ .box .secondary, .hover-area:nth-of-type(6):hover ~ .box .quaternary {
+  transform: translateX(0.5rem) rotateX(-2deg);
+}
+
+.hover-area:nth-of-type(7):hover ~ .box {
+  transform: rotateY(-10deg) rotateX(-10deg);
+}
+.hover-area:nth-of-type(7):hover ~ .box .secondary, .hover-area:nth-of-type(7):hover ~ .box .quaternary {
+  transform: translateX(-0.5rem) rotateY(2deg) rotateX(2deg);
+}
+
+.hover-area:nth-of-type(8):hover ~ .box {
+  transform: rotateY(0deg) rotateX(-10deg);
+}
+.hover-area:nth-of-type(8):hover ~ .box .secondary, .hover-area:nth-of-type(8):hover ~ .box .quaternary {
+  transform: translateX(0) rotateX(0) rotateX(2deg);
+}
+
+.hover-area:nth-of-type(9):hover ~ .box {
+  transform: rotateY(10deg) rotateX(-10deg);
+}
+.hover-area:nth-of-type(9):hover ~ .box .secondary, .hover-area:nth-of-type(9):hover ~ .box .quaternary {
+  transform: translateX(0.5rem) rotateY(-2deg) rotateX(2deg);
+}
+
+.box {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: 1/2/3/3;
+  justify-content: space-between;
+  justify-self: center;
+  padding: 40px;
+  position: relative;
+  top: 10%;
+  text-align: center;
+  transition: 2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  margin-top: 100px;
+  border-radius: 10px;
+}
+
+.box:hover {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+}
+
+.box input[type=text],
+.box input[type=password] {
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 10px 10px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box input[type=text]:focus,
+.box input[type=password]:focus {
+  border-color: #2ecc71;
+}
+
+.box input[type=submit] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 10vh;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type=submit]:hover {
+  background: #2ecc71;
+}
+
+.forgot {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=login.component.css.map */

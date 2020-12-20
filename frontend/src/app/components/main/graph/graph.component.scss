@@ -1,0 +1,22 @@
+$fill-color: #0D6EFD;
+$stroke-color: #000;
+$cross-color: #D02424;
+$dotted-line-color: #D02424;
+
+#graph-svg {
+  //margin-left: -5px;
+
+  .graph-shape {
+    fill: #555857;
+    fill-opacity: 65%;
+  }
+
+
+  .graph-label {
+    fill: #ffffff;
+  }
+
+  .graph-point {
+    stroke: $stroke-color;
+  }
+}

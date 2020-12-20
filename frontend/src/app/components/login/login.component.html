@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p class="alert">{{errorMessage}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Close</button>
+  </div>
+</ng-template>
+
+
+
+<div class="container container-flow">
+
+  <form name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="box bg-dark">
+    <h1>Login</h1>
+    <p class="text-muted"> Please enter your login and password!</p>
+    <div *ngIf="f.submitted && !username.valid" class="help-block text-danger">Username is required</div>
+    <input type="text" name="username" placeholder="Username" [(ngModel)]="user.username" #username="ngModel" required />
+    <div *ngIf="f.submitted && !password.valid" class="help-block text-danger">Password is required</div>
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="user.password" #password="ngModel" required />
+    <input class="button" type="submit" name="" value="Login" />
+  </form>
+
+</div>

@@ -1,0 +1,12 @@
+#graph-svg .graph-shape {
+  fill: #555857;
+  fill-opacity: 65%;
+}
+#graph-svg .graph-label {
+  fill: #ffffff;
+}
+#graph-svg .graph-point {
+  stroke: #000;
+}
+
+/*# sourceMappingURL=graph.component.css.map */
